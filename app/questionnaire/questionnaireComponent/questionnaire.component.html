@@ -1,0 +1,62 @@
+<div class="questionnaire-wrapper">
+	<div class="questionnaire-v-content">
+		<div class="questionnaire-container">
+			<div *ngIf="currentFrame !== 4" class="left-margin-center widgets-nav">
+				<button (click)="chooseFrame(0)" 
+					[ngClass]="{'active': currentFrame === 0}"
+				>1</button>
+				<button (click)="chooseFrame(1)" 
+					[disabled]="!(getLastValidFrame() >= 0)" 
+					[ngClass]="{'active': currentFrame === 1}"
+				>2</button>
+				<button (click)="chooseFrame(2)" 
+					[disabled]="!(getLastValidFrame() >= 1)" 
+					[ngClass]="{'active': currentFrame === 2}"
+				>3</button>
+				<button (click)="chooseFrame(3)" 
+					[disabled]="!(getLastValidFrame() >= 2)" 
+					[ngClass]="{'active': currentFrame === 3}"
+				>4</button>
+			</div>
+			<div>
+				<div [ngSwitch]="currentFrame">
+					<questionName *ngSwitchCase="0"></questionName>
+					<questionCity *ngSwitchCase="1"></questionCity>
+					<questionSocial *ngSwitchCase="2"></questionSocial>
+					<questionImage *ngSwitchCase="3"></questionImage>
+					<questionnaireResults *ngSwitchCase="4"></questionnaireResults>
+				</div>
+			</div>
+
+			<div class="bottom-nav">
+				<div *ngIf="currentFrame !== 4" class="left-margin-center">
+					<button 
+						(click)="prevFrame()" 
+						[disabled]="currentFrame === 0"
+					>
+						&#60; Предыдущий
+					</button>
+					<button 
+						*ngIf="currentFrame != 3"
+						(click)="nextFrame()" 
+						[disabled]="!(getLastValidFrame() >= currentFrame)"
+					>
+						Следующий &#62;
+					</button>
+					<button
+						*ngIf="currentFrame === 3" 
+						[disabled]="!isSuccessful"
+						(click)="showResults()" 
+						class="inverted-color"
+					>
+						Завершить
+					</button>
+				</div>
+				<div *ngIf="currentFrame === 4" class="text-center">
+					<button (click)="restart()" class="inverted-color reset">Пройти заново</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,91 @@
+img {
+	height: 195px;
+	width: 200px;
+	display: block;
+}
+
+.image-wrapper {
+	float: right;
+}
+
+.questionnaire-results {
+	background: white;
+	padding: 24px;
+	height: 200px;
+	width: 560px;
+	margin: 0 auto 32px;
+}
+
+.results-content {
+	overflow: hidden;
+	position: relative;
+	height: 200px;
+}
+
+.results-name {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: #222;
+    font-weight: 600;
+}
+
+.results-email {
+	margin-bottom: 45px;
+}
+
+a {
+	color: #666;
+	text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #ff9800;
+}
+
+a .social-title {
+	color: #2c55d6;
+}
+
+a:hover .social-url {
+	color: #ff9800;
+}
+
+
+.socials-wrapper {
+	position: absolute;
+	bottom: 2px;
+	left: 0;
+	width: 100%;
+	line-height: 19px;
+}
+
+@media (max-width: 767px) {
+	.image-wrapper {
+		float: none;
+	}
+
+	.questionnaire-results {
+		width: auto;
+		height: auto;
+		text-align: center;
+	}
+
+	img {
+		margin: 0 auto 16px;
+	}
+
+	.results-content {
+		height: auto;
+	}
+
+	.results-email {
+		margin-bottom: 16px;
+	}
+
+	.socials-wrapper {
+		margin-top: 16px;
+		position: static;
+	}
+}

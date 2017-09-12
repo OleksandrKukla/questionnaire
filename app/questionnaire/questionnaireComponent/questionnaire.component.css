@@ -1,0 +1,226 @@
+.questionnaire-wrapper {
+	display: table;
+	height: 100vh;
+	width: 100%;
+}
+
+.questionnaire-v-content {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.questionnaire-container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.questionnaire-container:before,
+.questionnaire-container:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.widgets-nav {
+	margin-bottom: 16px;
+}
+
+.widgets-nav button {
+	min-width: 41px;
+	height: 41px;
+	padding: 0;
+	line-height: 41px;
+	margin-right: 3px;
+	font-size: 15px;
+}
+
+.widgets-nav button[disabled], 
+.bottom-nav button[disabled] {
+	color: #ccc;
+	cursor: default;
+}
+
+.widgets-nav button.active {
+	color: #444;
+	cursor: default;
+}
+
+.bottom-nav button {
+	line-height: 36px;
+	height: 36px;
+	padding: 0 10px;
+	margin-right: 16px;
+	float: left;
+}
+
+.questionnaire-wrapper .reset {
+	float: none;
+}
+
+/deep/ .questionnaire-wrapper {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	color: #666;
+}
+
+/deep/ .questionnaire-wrapper button {
+	color: #ff9800;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
+	background: #fff;
+	transition: background-color 0.25s, color 0.25s;
+}
+
+/deep/ .questionnaire-wrapper button.inverted-color {
+	background: #ff9800;
+	color: #fff;
+}
+
+/deep/ .questionnaire-wrapper button.inverted-color[disabled],
+.bottom-nav button.inverted-color[disabled] {
+	background: #ccc;
+	color: #fff;
+}
+
+/deep/ .questionnaire-wrapper button,
+/deep/ .questionnaire-wrapper select,
+/deep/ .questionnaire-wrapper input[type="text"] {
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	border: none;
+	outline: none;
+}
+
+/deep/ .questionnaire-wrapper button:focus,
+/deep/ .questionnaire-wrapper select:focus,
+/deep/ .questionnaire-wrapper input[type="text"]:focus {
+	outline: none;
+}
+
+/deep/ .questionnaire-wrapper input[type="text"],
+/deep/ .questionnaire-wrapper select {
+	height: 48px;
+	line-height: 50px;
+	padding: 0 15px;
+	margin: 0 10px 16px 0;
+	border: 1px solid #fff;
+	transition: border-color 0.25s;
+	color: #666;
+	font-size: 14px;
+	width: 310px;
+	text-indent: 0;
+	box-sizing: border-box;
+}
+
+/deep/ .questionnaire-wrapper option {
+	padding: 0 15px;
+	line-height: 50px;
+}
+
+/deep/ .questionnaire-wrapper *::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #aaa;
+	font-size: 15px;
+}
+
+/deep/ .questionnaire-wrapper *::-moz-placeholder { /* Firefox 19+ */
+	color: #aaa;
+	font-size: 15px;
+}
+
+/deep/ .questionnaire-wrapper *:-ms-input-placeholder { /* IE 10+ */
+	color: #aaa;
+	font-size: 15px;
+}
+
+/deep/ .questionnaire-wrapper *:-moz-placeholder { /* Firefox 18- */
+	color: #aaa;
+	font-size: 15px;
+}
+
+/deep/ .questionnaire-wrapper input.invalid {
+	border-color: #ff0000;
+}
+
+/deep/ .questionnaire-wrapper .left-margin-center {
+	margin-left: 415px;
+}
+
+/deep/ .questionnaire-wrapper .title {
+	color: #666;
+	margin-bottom: 40px;
+}
+
+/deep/ .questionnaire-wrapper .error-message {
+	color: #ff0000;
+	display: inline-block;
+	text-align: left;
+	margin-bottom: 16px;
+}
+
+/deep/ .questionnaire-wrapper .question-component {
+	min-height: 330px;
+	overflow: hidden;
+}
+
+/deep/ .questionnaire-wrapper .text-center {
+	text-align: center;
+}
+
+/deep/ .questionnaire-wrapper .inline {
+	display: inline-block;
+}
+
+@media (max-width: 1200px) {
+	.questionnaire-container {
+		max-width: 960px;
+	}
+
+	/deep/ .questionnaire-wrapper .left-margin-center {
+		margin-left: 310px;
+	}
+}
+
+@media (max-width: 960px) {
+	.questionnaire-container {
+		max-width: 767px;
+	}
+
+	/deep/ .questionnaire-wrapper .left-margin-center {
+		margin-left: 240px;
+	}
+}
+
+@media (max-width: 767px) {
+	/deep/ .questionnaire-wrapper .left-margin-center {
+		margin-left: 0;
+	}
+
+	/deep/ .questionnaire-wrapper input[type="text"],
+	/deep/ .questionnaire-wrapper select {
+		width: 100%;
+	}
+
+	.widgets-nav,
+	.bottom-nav,
+	/deep/ .questionnaire-wrapper .title {
+		text-align: center;
+	}
+
+	.bottom-nav button {
+		float: none;
+	}
+
+	/deep/ .questionnaire-wrapper .question-component {
+		min-height: auto;
+		margin-bottom: 15px;
+	}
+
+	.questionnaire-wrapper,
+	.questionnaire-v-content {
+		display: block;
+	}
+}

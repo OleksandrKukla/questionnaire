@@ -1,0 +1,18 @@
+<div class="question-component">
+	<h1 class="title left-margin-center">4. Выберите любимого котика</h1>
+	<div class="text-center">
+		<div class="inline">
+			<div>
+				<div *ngFor="let imagePath of images; index as i" 
+					class="image-wrapper" 
+					[ngClass]="{'selected-image': (selectedImage === i)}"
+				>
+					<img [src]="imagePath" alt="Image" (click)="selectImage(i)">
+				</div>
+			</div>
+			<div *ngIf="hasChoose && !validate()" class="error-message">
+				{{ errorMessage }}
+			</div>
+		</div>
+	</div>
+</div>

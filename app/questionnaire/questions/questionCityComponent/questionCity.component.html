@@ -1,0 +1,21 @@
+<div class="question-component left-margin-center">
+	<h1 class="title">2. Выберите страну и город</h1>
+	<div>
+		<div>
+			<select (change)="onChangeCountry(currentCountry.value)" #currentCountry>
+				<option default value="-1">Страна</option>
+				<option *ngFor="let country of countries" [value]="country.id" [selected]="country.selected">
+					{{ country.name }}
+				</option>
+			</select>
+		</div>
+		<div>
+			<select (change)="onChangeCity(currentCity.value)" [disabled]="selectedCountry === '-1'" #currentCity>
+				<option default value="-1">Город</option>
+				<option *ngFor="let city of cities" [value]="city.id" [selected]="city.selected">
+					{{ city.name }}
+				</option>
+			</select>
+		</div>
+	</div>
+</div>

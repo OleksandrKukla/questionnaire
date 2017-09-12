@@ -1,0 +1,23 @@
+.input-row {
+	margin-bottom: 5px;
+}
+
+.question-social input[type="text"] {
+	line-height: 36px;
+	height: 34px;
+	margin-bottom: 0;
+	width: 260px;
+}
+
+label {
+	line-height: 36px;
+	cursor: pointer;
+	display: inline-block;
+	min-width: 150px;
+}
+
+@media (max-width: 767px) {
+	.question-social input[type="text"] {
+		width: 100%;
+	}
+}

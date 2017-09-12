@@ -1,0 +1,31 @@
+<div class="questionnaire-results">
+	<div class="image-wrapper">
+		<img [src]="questionImage.selectedImageSrc" [alt]="questionName.name">
+	</div>
+	<div class="results-content">
+		<div class="results-name">
+			{{ questionName.name }}
+		</div>
+
+		<div class="results-email">
+			<a [href]="'mailto:' + questionName.email">{{ questionName.email }}</a>
+		</div>
+
+		<div>
+			{{ questionCity.countryName }}, {{ questionCity.cityName }}
+		</div>
+
+		<div class="socials-wrapper"
+			*ngIf="questionSocial && questionSocial.socialNetworks && questionSocial.socialNetworks.length"
+		>
+			<div *ngFor="let social of questionSocial.socialNetworks">
+				<div *ngIf="social.value">
+					<a [href]="social.value">
+						<span class="social-title">{{ social.name }}:</span>
+						<span class="social-url">{{ social.value }}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

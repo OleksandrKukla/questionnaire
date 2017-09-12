@@ -1,0 +1,10 @@
+select {
+    cursor: pointer;
+}
+
+select[disabled] {
+    background: #eee;
+    color: #cccccc;
+    border-color: #eee;
+    cursor: default;
+}

@@ -1,0 +1,19 @@
+<div class="question-component question-social left-margin-center">
+	<h1 class="title">3. Отметьте социальные сети</h1>
+	<form [formGroup]="userForm">
+		<div *ngFor="let social of socialNetworks; index as i" 
+			class="input-row"
+		>
+			<label>
+				<input type="checkbox" [checked]="social.selected" (click)="changeCheckbox(i)">
+				{{ social.name }}
+			</label>
+			<input *ngIf="social.selected" 
+				type="text" 
+				[placeholder]="social.placeholder" 
+				[ngClass]="{ 'invalid' : social.invalid }"
+				formControlName="{{ social.input_id }}"
+			>
+		</div>
+	</form>
+</div>

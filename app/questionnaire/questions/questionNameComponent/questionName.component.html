@@ -1,0 +1,34 @@
+<div class="question-component left-margin-center">
+	<h1 class="title">1. Введите имя и e-mail</h1>
+	<form [formGroup]="userForm">
+		<div>
+			<input
+				type="text" 
+				formControlName="name" 
+				required 
+				placeholder="Имя" 
+				[ngClass]="{'invalid': (formErrors.name && formErrors.name.value && formErrors.name.show)}"
+			/>
+
+			<div class="error-message"
+				*ngIf="formErrors.name && formErrors.name.value && formErrors.name.show">
+				{{ formErrors.name.value }}
+			</div>
+		</div>
+
+		<div>
+			<input 
+				type="text" 
+				formControlName="email" 
+				required 
+				placeholder="E-mail" 
+				[ngClass]="{'invalid': (formErrors.email && formErrors.email.value && formErrors.email.show)}"
+			/>
+
+			<div class="error-message"
+				*ngIf="formErrors.email && formErrors.email.value && formErrors.email.show">
+				{{ formErrors.email.value }}
+			</div>
+		</div>
+	</form>
+</div>
